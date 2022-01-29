@@ -1,0 +1,53 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="clientes">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Id -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Código</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+    </ng-container>
+
+    <!-- Sobrenome -->
+    <ng-container matColumnDef="sobrenome">
+      <th mat-header-cell *matHeaderCellDef>Sobrenome</th>
+      <td mat-cell *matCellDef="let row">{{row.sobrenome}}</td>
+    </ng-container>
+
+    <!-- CPF -->
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef>CPF</th>
+      <td mat-cell *matCellDef="let row">{{row.cpf}}</td>
+    </ng-container>
+
+
+    <!-- E-mail -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-mail</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+
+    <!-- Editar -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <button mat-icon-button color="primary" *matCellDef="let row" (click)="callEditPage(row.id)">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+      </button>
+    </ng-container>
+
+    <!-- Excluir -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <button mat-icon-button color="warn" *matCellDef="let row" (click)="deleteClienteById(row.id)">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+      </button>
+    </ng-container>
+  </table>
+</div>

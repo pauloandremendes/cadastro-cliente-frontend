@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-title>Editar Cliente</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome" onfocus="this.value='';" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sobrenome" [(ngModel)]="cliente.sobrenome" name="sobrenome" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="CPF" [(ngModel)]="cliente.cpf" name="cpf" max="11" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="email@dominio.com" [(ngModel)]="cliente.email" name="email" type="email" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="CEP" [(ngModel)]="cliente.endereco.cep" name="cep" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Logradouro" [(ngModel)]="cliente.endereco.logradouro" name="logradouro">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Bairro" [(ngModel)]="cliente.endereco.bairro" name="bairro">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Cidade" [(ngModel)]="cliente.endereco.cidade" name="cidade">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="UF" [(ngModel)]="cliente.endereco.uf" name="uf">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipos de endereço</mat-label>
+      <mat-select [(value)]="cliente.endereco.tipoEndereco" matInput required>
+        <mat-option [value]="option.value" *ngFor="let option of types">{{ option.viewValue }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="editContato(cliente)" color="primary">
+      Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+
+
+  </form>
+</mat-card>
