@@ -27,7 +27,11 @@
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
     "@types/es6-shim": "^0.31.42",
+    "cep-promise": "^4.1.2",
+    "email-validator": "^2.0.4",
     "express": "^4.17.2",
+    "ng-sidebar": "^9.4.3",
+    "ngx-mask": "^13.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

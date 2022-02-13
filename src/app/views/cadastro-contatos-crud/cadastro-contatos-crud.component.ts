@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CadastroContatosCreateComponent } from '../../components/cadastro-contatos/cadastro-contatos-create/cadastro-contatos-create.component';
 
 @Component({
   selector: 'app-cadastro-contatos-crud',
@@ -8,13 +10,20 @@ import { Router } from '@angular/router'
 })
 export class CadastroContatosCrudComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
   }
 
   navigateCadastroContatosCreate(): void {
     this.router.navigate(['/cadastro-contatos/create'])
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CadastroContatosCreateComponent);
   }
 
 }

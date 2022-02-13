@@ -32,6 +32,11 @@ import {MatSelectModule} from '@angular/material/select'
 import { CadastroContatosEditComponent } from './components/cadastro-contatos/cadastro-contatos-edit/cadastro-contatos-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { cep } from 'cep-promise';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SidebarModule } from 'ng-sidebar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +69,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatSortModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    NgxMaskModule.forRoot(),
+    MatDialogModule,
+    SidebarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

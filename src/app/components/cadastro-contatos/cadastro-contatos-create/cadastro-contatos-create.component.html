@@ -3,23 +3,24 @@
   <form>
       <mat-form-field>
           <input matInput placeholder="Nome"
-              [(ngModel)]="cliente.nome" name="nome" onfocus="this.value='';" required>
+              [(ngModel)]="cliente.nome" name="nome" maxlength="100" required>
       </mat-form-field>
       <mat-form-field>
           <input matInput placeholder="Sobrenome"
-              [(ngModel)]="cliente.sobrenome" name="sobrenome" required>
+              [(ngModel)]="cliente.sobrenome" name="sobrenome" maxlength="100" required>
       </mat-form-field>
       <mat-form-field>
           <input matInput placeholder="CPF"
-              [(ngModel)]="cliente.cpf" name="cpf" max="11"  required>
+              [(ngModel)]="cliente.cpf" name="cpf" id="cpf" maxlength="14" onkeyup="mascaraCPF()"
+              mask="000.000.000-00" required>
             </mat-form-field>
       <mat-form-field>
           <input matInput placeholder="email@dominio.com"
-            [(ngModel)]="cliente.email" name="email" type="email" required>
+            [(ngModel)]="cliente.email" name="email" type="email" ngModel email="true" formControlName="email" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="CEP"
-            [(ngModel)]="endereco.cep" name="cep" type="text">
+        <input matInput placeholder="CEP" class="Form-control" onChange
+            [(ngModel)]="endereco.cep" name="cep" maxlength="9" mask="00000-000" type="text">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Logradouro"
@@ -31,11 +32,11 @@
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Cidade"
-            [(ngModel)]="endereco.cidade" name="cidade">
+            [(ngModel)]="endereco.cidade" name="cidade" >
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="UF"
-            [(ngModel)]="endereco.uf" name="uf">
+            [(ngModel)]="endereco.uf" name="uf" >
       </mat-form-field>
 
       <mat-form-field appearance="fill">

@@ -37,9 +37,9 @@
     <!-- Editar -->
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
-      <button mat-icon-button color="primary" *matCellDef="let row" (click)="callEditPage(row.id)">
-        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
-      </button>
+          <button mat-icon-button color="primary" *matCellDef="let row" (click)="callEditPage(row.id)" class="edit">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+          </button>
     </ng-container>
 
     <!-- Excluir -->

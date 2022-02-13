@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subscriber } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 interface Type {
   value: string;
@@ -33,13 +34,11 @@ export class CadastroContatosCreateComponent implements OnInit {
   public cliente: Cliente = { endereco: this.endereco };
   clientes: Cliente[] = [];
 
-
   constructor(
     private cadastroContatosService: CadastroContatosService,
     private router: Router,
-    // private dialog: MatDialog,
     private messageService: MessageService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     let params = new HttpParams();
@@ -61,10 +60,7 @@ export class CadastroContatosCreateComponent implements OnInit {
             this.cliente = responseCli;
             this.router.navigate(['/cadastro-contatos'])
           })
-
       });
-
-
   }
 
   cancel(): void {
